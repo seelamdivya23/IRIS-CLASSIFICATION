@@ -1,0 +1,25 @@
+<html>
+<body>
+    <div class="login">
+       <h1>Species-classifier</h1>
+   
+        <!-- Main Input For Receiving Query to our ML -->
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+         <input type="text" name="Id" placeholder="Id" required="required" /><br>
+           <input type="text" name="SepalLengthCm" placeholder="SepalLengthCm" required="required" /><br>
+           <input type="text" name="SepalWidthCm" placeholder="SepalWidthCm" required="required" /><br>
+           <input type="text" name="PetalLengthCm" placeholder="PetalLengthCm" required="required" /><br>
+           <input type="text" name="PetalWidthCm" placeholder="PetalWidthCm" required="required" /><br>
+           <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+       </form>
+       <h2>The Species is Iris-setosa, Iris-versicolor, Iris-virginica</h2><br>
+<h1>
+  The Iris Prediction is:
+  {% if result == 0 %} Iris-setosa
+  {% elif result == 1 %} Iris-versicolor
+  {% elif result == 2 %} Iris-virginica
+  {% else %} Unknown
+  {% endif %}
+</h1>  
+   <body>
+</html>
